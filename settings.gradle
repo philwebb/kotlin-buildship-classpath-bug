@@ -1,0 +1,20 @@
+pluginManagement {
+	repositories {
+		mavenCentral()
+		gradlePluginPortal()
+	}
+	resolutionStrategy {
+		eachPlugin {
+			if (requested.id.id == "org.jetbrains.kotlin.jvm") {
+				useVersion "${kotlinVersion}"
+			}
+			if (requested.id.id == "org.jetbrains.kotlin.plugin.spring") {
+				useVersion "${kotlinVersion}"
+			}
+		}
+	}	
+}
+
+
+rootProject.name = 'kotlin-buildship-classpath-bug'
+
